@@ -1,0 +1,147 @@
+
+.product-card {
+    border-radius: 4px;
+    transition: all 0.2s;
+    border: none;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: white;
+  
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+
+  .image-container {
+    position: relative;
+    background-color: #f5f5f6;
+    overflow: hidden;
+  }
+  
+ 
+  .product-image {
+    object-fit: cover;
+    transition: opacity 0.3s ease-in;
+    opacity: 0;
+  }
+  
+  .product-image.loading-started {
+    opacity: 0.5;
+  }
+  
+  .product-image.blur-effect {
+    filter: blur(10px);
+    transform: scale(1.05);
+  }
+  
+  .product-image.loaded {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+  
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      #f0f0f0 0%,
+      #f8f8f8 50%,
+      #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  
+  .wishlist-button {
+    width: 28px;
+    height: 28px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+  }
+  
+  .product-card:hover .wishlist-button {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+ 
+  .similar-products-badge {
+    left: 10px;
+    bottom: 10px;
+    font-size: 10px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
+  }
+  
+  .product-card:hover .similar-products-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  @media (max-width: 767px) {
+    .wishlist-button, .similar-products-badge {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+
+  .brand-name {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  
+  .product-name {
+    font-size: 12px;
+    color: #535665;
+  }
+  
+ 
+  .current-price {
+    font-size: 14px;
+  }
+  
+  .original-price, .discount {
+    font-size: 12px;
+  }
+  
+  .discount {
+    color: #ff905a;
+  }
+
+  .btn-primary {
+    background-color: #ff3f6c;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+  }
+  .btn-primary:hover {
+    background-color: #e7335b;
+  }
